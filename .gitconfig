@@ -1,0 +1,8 @@
+[core]
+	symlinks = true
+	autocrlf = input
+[credential "helperselector"]
+	selected = manager
+[user]
+	email = masaamura@gmail.com
+	name = MURAKAMI Masami
