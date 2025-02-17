@@ -7,7 +7,7 @@
 #path=($HOME/winget/shims(N-/) $path)
 
 # flutter
-path=($HOME/dev/flutter/bin(N-/) $path)
+path=($HOME/development/flutter/bin(N-/) $path)
 
 # Android Studio
 path=(/usr/local/android-studio/bin(N-/) $path)
