@@ -7,7 +7,7 @@ ZSHDIR=${HOME}/.zsh.d
 
 OLDIFS=$IFS
 IFS=$'\n'
-ZSHFILES=($(find $ZSHDIR -maxdepth 1 -type f -name "*.zsh" | sort -n))
+ZSHFILES=($(find -H $ZSHDIR -maxdepth 1 -type f -name "*.zsh" | sort -n))
 IFS=$OLDIFS
 
 for z in ${ZSHFILES[@]}; do
