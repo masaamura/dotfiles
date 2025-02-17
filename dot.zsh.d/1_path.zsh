@@ -18,5 +18,8 @@ path=($HOME/.config/emacs/bin(N-/) $path)
 # emacs
 #path=($HOME/emacs/emacs-29.4/bin(N-/) $path)
 
+# ghcup
+path=($HOME/.ghcup/bin(N-/) $path)
+
 # my bin
 path=($HOME/bin(N-/) $path)
