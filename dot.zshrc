@@ -40,12 +40,6 @@ if [[ -n ${TERMINAL_NAME} ]]; then
     add-zsh-hook -Uz preexec terminal_title_preexec
 fi
 
-### mise
-if [[ -x ~/.local/bin/mise ]]; then
-    eval "$(~/.local/bin/mise activate zsh)"
-    #eval "$(~/.local/bin/mise activate --shims)"
-fi
-
 ### cd by history
 function powered_cd_add_log() {
     [ -e ~/.powered_cd.log ] || touch ~/.powered_cd.log
