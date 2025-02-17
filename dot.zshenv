@@ -8,8 +8,12 @@ else
     export PAGER=vim
 fi
 
-export PAGER=lv
-export LV="-c"
+if type lv > /dev/null 2>&1; then
+    export PAGER=lv
+    export LV="-c"
+else
+    export PAGER=less
+fi
 
 function show_path() {
    echo $1
