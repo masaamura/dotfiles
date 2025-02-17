@@ -15,7 +15,7 @@ path=(/usr/local/android-studio/bin(N-/) $path)
 # doom emacs
 path=($HOME/.config/emacs/bin(N-/) $path)
 
-# emacs`
+# emacs
 #path=($HOME/emacs/emacs-29.4/bin(N-/) $path)
 
 # my bin
