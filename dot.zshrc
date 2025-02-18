@@ -78,24 +78,38 @@ alias c='powered_cd'
 
 ## emacs
 if type emacs > /dev/null 2>&1; then
-    server_running_p() {
+    server-running-p() {
        emacsclient --eval '(server-running-p)' >/dev/null 2>&1
     }
 
-    if server_running_p
-    then
+    if server-running-p; then
         echo "emacs daemon already running."
     else
-        if [[ ! -n "${MSYSTEM}" || "${MSYSTEM}" = "MINGW64" ]]; then
-            #emacs --daemon &
-            echo "you can start emacs daemon."
+        if [[ -z "${MSYSTEM}" ]]; then
+            #echo "Not MSYS2"
+            echo "start emacs daemon"
+            emacs --daemon
         else
-            echo "cannot execute emacs daemon."
+            #echo "MSYS2"
+            if [[! "${MSYSTEM}" = "MINGW64" ]]; then
+                echo "you can start emacs daemon."
+                #echo "start emacs daemon"
+                #emacs --daemon &
+            else
+                echo "cannot execute emacs daemon."
+            fi
         fi
     fi
 
     alias E='emacsclient'
-    alias killemacs="emacsclient -e '(kill-emacs)'"
+    kill-emacs() {
+        if server-running-p; then
+            echo "stop emacs daemon"
+            emacsclient -e '(kill-emacs)'
+        else
+            echo "emacs daemon is NOT running"
+        fi
+    }
 fi
 
 ### starship
