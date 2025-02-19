@@ -22,3 +22,6 @@ alias ll='ls -l'
 alias cp='nocorrect cp -aiv'
 alias mv='nocorrect mv -iv'
 alias rm='nocorrect rm -iv'
+
+# git
+alias gits='git status'
