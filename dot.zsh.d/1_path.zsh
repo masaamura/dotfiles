@@ -9,6 +9,9 @@
 # flutter
 path=($HOME/development/flutter/bin(N-/) $path)
 
+# Android SDK
+path=($HOME/development/android/sdk/platform-tools(N-/) $path)
+
 # Android Studio
 path=(/usr/local/android-studio/bin(N-/) $path)
 
