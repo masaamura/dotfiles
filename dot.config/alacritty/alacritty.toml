@@ -1,0 +1,19 @@
+#[general]
+import = [
+    # https://github.com/alacritty/alacritty-theme から好きなカラースキームのTOMLファイルをコピー
+    "~/.config/alacritty/themes/themes/dracula.toml"
+    # "~/.config/alacritty/themes/themes/solarized_dark.toml"
+    # "~/.config/alacritty/themes/themes/tokyo-night.toml"
+]
+
+[shell]
+program = "/usr/bin/zsh"  # デフォルトは$SHELLの値、$SHELLが設定されていなければログインシェル
+#args = ["-l", "-c", "tmux a -t 0 || tmux"]
+args = ["-l"]
+
+[font]
+normal = { family = "HackGen Console NF", style = "Regular" }
+bold = { family = "HackGen Console NF", style = "Bold" }
+italic = { family = "HackGen Console NF", style = "Regular" }
+bold_italic = { family = "HackGen Console NF", style = "Bold" }
+size = 13.0
