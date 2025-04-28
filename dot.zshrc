@@ -29,6 +29,17 @@ if [[ -n ${TERMINAL_NAME} && -n ${MSYSTEM} ]]; then
     TERMINAL_NAME="${TERMINAL_NAME} ${MSYSTEM}"
 fi
 
+# set hook functions
+#if [[ -n ${TERMINAL_NAME} ]]; then
+#    function terminal_title_precmd() {
+#        print -Pn "\e]0;${TERMINAL_NAME} %m: ${ZSH_NAME} ${COLUMNS}×${LINES}\a"
+#    }
+#    function terminal_title_preexec() {
+#        print -Pn "\e]0;${TERMINAL_NAME} %m: $history[$HISTCMD] ${COLUMNS}×${LINES}\a"
+# }
+#    add-zsh-hook -Uz precmd terminal_title_precmd
+#    add-zsh-hook -Uz preexec terminal_title_preexec
+#fi
 
 ## emacs
 if type emacs > /dev/null 2>&1; then
