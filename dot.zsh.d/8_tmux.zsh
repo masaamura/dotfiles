@@ -3,18 +3,18 @@ TMUXCMD=""
 if type tmux > /dev/null 2>&1; then
     TMUXCMD="tmux"
 else
-    # echo "tmux not found."
+    echo "tmux not found."
 fi
 FZFCMD=""
 if type fzf > /dev/null 2>&1; then
     FZFCMD="fzf"
 else
-    # echo "fzf not found."
+    echo "fzf not found."
 fi
 
 if [[ -n $TMUXCMD && -n $FZFCMD ]]; then
-    #echo $-
-    #echo $TMUX
+    # echo $-
+    # echo $TMUX
     if [[ ! -n $TMUX && $- == *l* ]]; then
         # outside of tmux session
         # get sessions list
