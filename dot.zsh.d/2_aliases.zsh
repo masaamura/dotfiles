@@ -1,11 +1,8 @@
 ### aliases
 
-# vi is neovim
+# vim is neovim
 if type nvim > /dev/null 2>&1; then
-    alias vi=nvim
-else
-    echo "neovim is not installed."
-    alias vi=vim
+    alias vim=nvim
 fi
 
 # ls is eza
