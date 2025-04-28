@@ -13,8 +13,8 @@ else
 fi
 
 if [[ -n $TMUXCMD && -n $FZFCMD ]]; then
-    echo $-
-    echo $TMUX
+    #echo $-
+    #echo $TMUX
     if [[ ! -n $TMUX && $- == *l* ]]; then
         # outside of tmux session
         # get sessions list

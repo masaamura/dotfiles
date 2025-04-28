@@ -87,8 +87,8 @@ if type emacs > /dev/null 2>&1; then
     else
         if [[ -z "${MSYSTEM}" ]]; then
             #echo "Not MSYS2"
-            echo "start emacs daemon"
-            emacs --daemon
+            #echo "start emacs daemon"
+            #emacs --daemon
         else
             #echo "MSYS2"
             if [[! "${MSYSTEM}" = "MINGW64" ]]; then
@@ -119,6 +119,6 @@ fi
 
 #show_path "end of zshrc"
 
-echo "\"${TERM_PROGRAM}\""
-echo "\"${TERMINAL_NAME}\""
+echo "TERM_PROGRAM=\"${TERM_PROGRAM}\""
+echo "TERMINAL_NAME=\"${TERMINAL_NAME}\""
 env | grep MSYS
