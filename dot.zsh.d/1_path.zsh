@@ -24,5 +24,16 @@ path=($HOME/.config/emacs/bin(N-/) $path)
 # ghcup
 path=($HOME/.ghcup/bin(N-/) $path)
 
+# sentencepiece
+if [[ ${OSTYPE} == linux* ]]; then
+    path=($HOME/sentencepiece/bin(N-/) $path)
+    export LD_LIBRARY_PATH=$HOME/sentencepiece/lib${LD_LIBRARY_PATH+:}${LD_LIBRARY_PATH}
+fi
+
 # my bin
 path=($HOME/bin(N-/) $path)
+
+# 重複を削除
+if [[ ${OSTYPE} == linux* ]]; then
+    typeset -TU LD_LIBRARY_PATH ld_library_path
+fi
