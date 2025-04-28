@@ -77,6 +77,15 @@ if type emacs > /dev/null 2>&1; then
     }
 fi
 
+### fasd
+eval "$(fasd --init auto)"
+
+### fxf-extras
+[[ -e "$HOME/.fzf-extras/fzf-extras.sh" ]] \
+  && source "$HOME/.fzf-extras/fzf-extras.sh"
+[[ -e "$HOME/.fzf-extras/fzf-extras.zsh" ]] \
+  && source "$HOME/.fzf-extras/fzf-extras.zsh"
+
 ### starship
 if type starship > /dev/null 2>&1; then
     eval "$(starship init zsh)"
