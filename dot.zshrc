@@ -29,52 +29,6 @@ if [[ -n ${TERMINAL_NAME} && -n ${MSYSTEM} ]]; then
     TERMINAL_NAME="${TERMINAL_NAME} ${MSYSTEM}"
 fi
 
-if [[ -n ${TERMINAL_NAME} ]]; then
-    function terminal_title_precmd() {
-        print -Pn "\e]0;${TERMINAL_NAME} %m: ${ZSH_NAME} ${COLUMNS}×${LINES}\a"
-    }
-    function terminal_title_preexec() {
-        print -Pn "\e]0;${TERMINAL_NAME} %m: $history[$HISTCMD] ${COLUMNS}×${LINES}\a"
-    }
-    add-zsh-hook -Uz precmd terminal_title_precmd
-    add-zsh-hook -Uz preexec terminal_title_preexec
-fi
-
-### cd by history
-function powered_cd_add_log() {
-    [ -e ~/.powered_cd.log ] || touch ~/.powered_cd.log
-    local i=0
-    cat ~/.powered_cd.log | while read line; do
-        (( i++ ))
-        if [ i = 30 ]; then
-            sed -i -e "30,30d" ~/.powered_cd.log
-        elif [ "$line" = "$PWD" ]; then
-            sed -i -e "${i},${i}d" ~/.powered_cd.log
-        fi
-    done
-    echo "$PWD" >> ~/.powered_cd.log
-}
-
-function powered_cd() {
-    [ -e ~/.powered_cd.log ] || touch ~/.powered_cd.log
-    if [ $# = 0 ]; then
-        cd $(tac ~/.powered_cd.log | fzf)
-    elif [ $# = 1 ]; then
-        cd $1
-    else
-        echo "powered_cd: too many arguments"
-    fi
-}
-
-_powered_cd() {
-    _files -/
-}
-
-compdef _powered_cd powered_cd
-
-add-zsh-hook -Uz chpwd powered_cd_add_log
-
-alias c='powered_cd'
 
 ## emacs
 if type emacs > /dev/null 2>&1; then
