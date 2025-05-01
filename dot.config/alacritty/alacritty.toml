@@ -1,4 +1,4 @@
-#[general]
+[general]
 import = [
     # https://github.com/alacritty/alacritty-theme から好きなカラースキームのTOMLファイルをコピー
     "~/.config/alacritty/themes/themes/dracula.toml"
@@ -6,7 +6,7 @@ import = [
     # "~/.config/alacritty/themes/themes/tokyo-night.toml"
 ]
 
-[shell]
+[terminal.shell]
 program = "/usr/bin/zsh"  # デフォルトは$SHELLの値、$SHELLが設定されていなければログインシェル
 #args = ["-l", "-c", "tmux a -t 0 || tmux"]
 args = ["-l"]
