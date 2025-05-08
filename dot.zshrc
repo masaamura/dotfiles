@@ -15,6 +15,14 @@ for z in ${ZSHFILES[@]}; do
     . $z
 done
 
+if type bat > /dev/null 2>&1; then
+    NULLCMD="bat --paging=never"
+    READNULLCMD="bat --paging=always"
+elif type batcat > /dev/null 2>&1; then
+    NULLCMD="batcat --paging=never"
+    READNULLCMD="batcat --paging=always"
+fi
+
 ### Window titl
 # set terminal name
 TERMINAL_NAME=""

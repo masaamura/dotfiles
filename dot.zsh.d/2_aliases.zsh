@@ -23,3 +23,18 @@ alias rm='nocorrect rm -iv'
 
 # git
 alias gits='git status'
+
+# bat
+if type batcat > /dev/null 2>&1; then
+    alias cat="batcat --paging=never"
+    alias less='batcat --paging=always'
+    alias more='batcat --paging=always'
+else
+    if type bat > /dev/null 2>&1; then
+        alias cat="bat --paging=never"
+        alias less='bat --paging=always'
+        alias more='bat --paging=always'
+    else
+        echo "bat is not installed."
+    fi
+fi
