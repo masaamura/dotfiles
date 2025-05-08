@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # Created by newuser for 5.9
 
 if type nvim > /dev/null 2>&1; then
