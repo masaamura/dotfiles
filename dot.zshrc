@@ -139,6 +139,9 @@ unalias zz
 [[ -e "$HOME/.fzf-extras/fzf-extras.zsh" ]] \
   && source "$HOME/.fzf-extras/fzf-extras.zsh"
 
+### rustup
+. $HOME/.cargo/env
+
 ### starship
 if type starship > /dev/null 2>&1; then
     eval "$(starship init zsh)"
