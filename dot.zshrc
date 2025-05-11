@@ -55,16 +55,16 @@ ZSHFILES=($(find -H $ZSHDIR -maxdepth 1 -type f -name "*.zsh" | sort -n))
 IFS=$OLDIFS
 
 for z in ${ZSHFILES[@]}; do
-    echo "execute" $z
+    # echo "execute" $z
     . $z
 done
 
 if type bat > /dev/null 2>&1; then
-    NULLCMD="bat --paging=never"
-    READNULLCMD="bat --paging=always"
+    NULLCMD="bat"
+    READNULLCMD="bat"
 elif type batcat > /dev/null 2>&1; then
-    NULLCMD="batcat --paging=never"
-    READNULLCMD="batcat --paging=always"
+    NULLCMD="batcat"
+    READNULLCMD="batcat"
 fi
 
 ### Window titl
