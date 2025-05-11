@@ -59,9 +59,18 @@ _powered_cd() {
     _files -/
 }
 
-compdef _powered_cd powered_cd
-
+#compdef _powered_cd powered_cd
 #add-zsh-hook -Uz chpwd powered_cd_add_log
-
 #alias C='powered_cd'
 
+
+### fasd
+if type fasd > /dev/null 2>&1; then
+    eval "$(fasd --init zsh-hook)"
+fi
+
+### fxf-extras
+[[ -e "$HOME/.fzf-extras/fzf-extras.sh" ]] \
+  && source "$HOME/.fzf-extras/fzf-extras.sh"
+#[[ -e "$HOME/.fzf-extras/fzf-extras.zsh" ]] \
+#  && source "$HOME/.fzf-extras/fzf-extras.zsh"

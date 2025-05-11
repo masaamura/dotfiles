@@ -129,16 +129,6 @@ if type emacs > /dev/null 2>&1; then
     }
 fi
 
-### fasd
-eval "$(fasd --init auto)"
-
-### fxf-extras
-unalias zz
-[[ -e "$HOME/.fzf-extras/fzf-extras.sh" ]] \
-  && source "$HOME/.fzf-extras/fzf-extras.sh"
-[[ -e "$HOME/.fzf-extras/fzf-extras.zsh" ]] \
-  && source "$HOME/.fzf-extras/fzf-extras.zsh"
-
 ### rustup
 . $HOME/.cargo/env
 
