@@ -22,5 +22,3 @@ function show_path() {
    echo $PATH | /usr/bin/sed 's/:/\n/g'
    echo
 }
-
-#show_path "end .zshenv"
