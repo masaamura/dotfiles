@@ -130,7 +130,9 @@ if type emacs > /dev/null 2>&1; then
 fi
 
 ### rustup
-. $HOME/.cargo/env
+if [[ -e "$HOME/.cargo/env" ]]; then
+    . $HOME/.cargo/env
+fi
 
 ### starship
 if type starship > /dev/null 2>&1; then
