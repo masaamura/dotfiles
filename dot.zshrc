@@ -139,8 +139,6 @@ if type starship > /dev/null 2>&1; then
     eval "$(starship init zsh)"
 fi
 
-#show_path "end of zshrc"
-
 echo "TERM_PROGRAM=\"${TERM_PROGRAM}\""
 echo "TERMINAL_NAME=\"${TERMINAL_NAME}\""
 env | grep MSYS
