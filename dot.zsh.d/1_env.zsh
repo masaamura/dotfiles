@@ -17,6 +17,10 @@ else
     export PAGER=less
 fi
 
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+
 function show_path() {
    echo $1
    echo $PATH | /usr/bin/sed 's/:/\n/g'

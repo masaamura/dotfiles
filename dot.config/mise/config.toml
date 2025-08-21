@@ -1,6 +1,12 @@
 [tools]
-java = "latest"
-node = "latest"
-python = "latest"
-ruby = "latest"
-sbcl = "latest"
+ghcup = "0.1.50.2"
+java = "24.0.1"
+node = "24.1.0"
+python = "3.13.5"
+ruby = "3.4.4"
+sbcl = "2.5.5"
+
+[settings]
+
+[settings.python]
+compile = true
