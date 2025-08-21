@@ -73,7 +73,7 @@ ZSHFILES=($(find -H $ZSHDIR -maxdepth 1 -type f -name "*.zsh" | sort -n))
 IFS=$OLDIFS
 
 for z in ${ZSHFILES[@]}; do
-    # echo "execute" $z
+    echo "execute" $z
     . $z
 done
 
