@@ -53,6 +53,18 @@ elif [[ -n $TMUXCMD ]]; then
     fi
 fi
 
+# unameコマンドでOSを判定
+if [ "$(uname -s)" = "Linux" ]; then
+    echo "Linux環境です。"
+elif [ "$(uname -s)" = "Darwin" ]; then
+    echo "macOS環境です。"
+# Windows Subsystem for Linuxなどの環境に対応
+elif [[ "$(uname -s)" == CYGWIN_NT* ]] || [[ "$(uname -s)" == MINGW* ]] || [[ "$(uname -s)" == MSYS_NT* ]]; then
+    echo "Windows環境 (WSLなど) です。"
+else
+    echo "その他OSです。"
+fi
+
 # check first of the day
 FIRST_FILE="$HOME/.first_of_the_day"
 FIRST_EXEC=0
