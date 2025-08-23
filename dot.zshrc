@@ -25,7 +25,7 @@ if [[ -n $TMUXCMD && -n $FZFCMD ]]; then
         # outside of tmux session
         # get sessions list
         NEW="Create new session"
-        ID="`tmux list-sessions`"
+        ID="`tmux list-sessions 2> /dev/null`"
         if [[ -n "$ID" ]]; then
             ID="$ID\n${NEW}"
         else
@@ -42,6 +42,13 @@ if [[ -n $TMUXCMD && -n $FZFCMD ]]; then
             exit
         else
             :
+        fi
+    fi
+elif [[ -n $TMUXCMD ]]; then
+    if [[ ! -n $TMUX && $- == *l* ]]; then
+        ID="`tmux list-sessions 2> /dev/null`"
+        if [[ -n "$ID" ]]; then
+            echo $ID
         fi
     fi
 fi
