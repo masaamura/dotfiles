@@ -238,9 +238,11 @@ if [[ $FIRST_EXEC == "1" && $- == *l* ]]; then
     elif type neofetch > /dev/null 2>&1 ; then
         neofetch
     fi
-
-    ls $HOME
 fi
+
+echo
+ls_abbrev
+
 if [[ $- == *l* ]]; then
     if [[ ! -d /media/Marshal/backups ]]; then
         echo
