@@ -221,15 +221,6 @@ echo "TERM_PROGRAM=\"${TERM_PROGRAM}\""
 echo "TERMINAL_NAME=\"${TERMINAL_NAME}\""
 env | grep MSYS
 
-# check backup media
-check_backup_dir() {
-    if [[ ! -d /media/Marshal/backups ]]; then
-        echo
-        echo "Please mount USB drive Marshal for backup your life."
-    fi
-}
-add-zsh-hook -Uz chpwd check_backup_dir
-
 if [[ $FIRST_EXEC == "1" && $- == *l* ]]; then
     if type hyfetch > /dev/null 2>&1 ; then
         hyfetch
@@ -243,9 +234,14 @@ fi
 echo
 ls_abbrev
 
-if [[ $- == *l* ]]; then
-    if [[ ! -d /media/Marshal/backups ]]; then
-        echo
-        echo "Please mount USB drive Marshal for backup your life."
-    fi
+# check backup media
+if [ "$(hostname)" = "HPCE" ]; then
+    check_backup_dir() {
+        if [[ ! -d /media/Marshal/backups ]]; then
+            echo
+            echo "Please mount USB drive Marshal for backup your life."
+        fi
+    }
+    add-zsh-hook -Uz chpwd check_backup_dir
+    check_backup_dir
 fi
